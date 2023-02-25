@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class GymBroAbility : MonoBehaviour
 {
-    [SerializeField]private Vector3 _grabOffset = new Vector3(3f, 0);
+    [SerializeField]private Transform _pivotPoint;
+    [SerializeField]private Transform _fists;
+    [SerializeField]private Vector3 _grabOffset = new Vector3(20f, 0);
     [SerializeField]private bool isGrabbing = false;
     [SerializeField]private float holdTimer = 0f;
     // Start is called before the first frame update
@@ -16,16 +18,20 @@ public class GymBroAbility : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - _pivotPoint.position; 
+        float rotation_z = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg; 
+        _pivotPoint.rotation = Quaternion.Euler(0f, 0f, rotation_z);
         //TODO: Add hold timer
         if(Input.GetKey(KeyCode.Q)){
             Debug.Log("Tryna grab");
-            RaycastHit2D hit = Physics2D.Raycast(transform.position + _grabOffset, Vector2.right, 10f);
+            RaycastHit2D hit = Physics2D.Raycast(_fists.position + _grabOffset, Vector2.right, 50f);
 
             if(hit.collider != null){
                 Debug.Log("Hit Something" + hit.collider.tag);
                 if(hit.collider.CompareTag("Enemy")){
                     EnemyStats curEnemyGrabbed = hit.collider.gameObject.GetComponent<EnemyStats>();
-                    hit.collider.gameObject.transform.position = transform.position + _grabOffset;
+                    hit.collider.gameObject.transform.position = _fists.transform.position + _grabOffset;
                     isGrabbing = true;
                 }
             }
@@ -42,7 +48,7 @@ public class GymBroAbility : MonoBehaviour
     }
 
     private void OnDrawGizmos() {
-        Gizmos.DrawLine(transform.position + _grabOffset, transform.position + new Vector3(10, 0));
+        Gizmos.DrawLine(_fists.transform.position + _grabOffset, _fists.transform.position + new Vector3(10, 0));
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
