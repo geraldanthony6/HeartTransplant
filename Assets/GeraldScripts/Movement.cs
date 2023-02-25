@@ -16,5 +16,7 @@ public class Movement : MonoBehaviour
     {
         transform.Translate(Vector2.right * moveSpeed * Time.deltaTime * Input.GetAxisRaw("Horizontal"));
         transform.Translate(Vector2.up * moveSpeed * Time.deltaTime * Input.GetAxisRaw("Vertical"));
+
+        
     }
 }
