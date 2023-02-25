@@ -13,7 +13,7 @@ public class GymBroAbility : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        curHeldEnemy = null;
     }
 
     // Update is called once per frame
@@ -24,7 +24,7 @@ public class GymBroAbility : MonoBehaviour
         float rotation_z = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg; 
         _pivotPoint.rotation = Quaternion.Euler(0f, 0f, rotation_z);
         //TODO: Add hold timer
-        if(Input.GetKey(KeyCode.Q)){
+        if(Input.GetKey(KeyCode.Mouse0)){
             Debug.Log("Tryna grab");
             RaycastHit2D hit = Physics2D.Raycast(_fists.position + _grabOffset, Vector2.right, 50f);
 
@@ -39,9 +39,9 @@ public class GymBroAbility : MonoBehaviour
             }
         }    
 
-        if(Input.GetKeyUp(KeyCode.Q)){
+        if(Input.GetKeyUp(KeyCode.Mouse0)){
             isGrabbing = false;
-            holdTimer = 2;
+            holdTimer = 0.5f;
             curHeldEnemy = null;
 
         }
@@ -51,8 +51,11 @@ public class GymBroAbility : MonoBehaviour
         }
 
         if(holdTimer <= 0){
-            curHeldEnemy.GetComponent<EnemyStats>().TakeDamage(20);
-            holdTimer = 2f;
+            if(curHeldEnemy){
+                curHeldEnemy.GetComponent<EnemyStats>().TakeDamage(20);
+            }
+            
+            holdTimer = 0.5f;
         }
     }
 
