@@ -185,7 +185,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &541163095
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -282,8 +282,40 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 541163096}
+  - {fileID: 798972856}
   m_Father: {fileID: 1962324131}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &798972855
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 798972856}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &798972856
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 798972855}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.3200002, y: -0.2, z: -9.94589}
+  m_LocalScale: {x: 0.92045, y: 0.92045, z: 0.92045}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 650932022}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &994204917
 GameObject:
@@ -634,7 +666,6 @@ GameObject:
   - component: {fileID: 1962324132}
   - component: {fileID: 1962324133}
   - component: {fileID: 1962324134}
-  - component: {fileID: 1962324135}
   - component: {fileID: 1962324136}
   m_Layer: 0
   m_Name: Test_Player
@@ -775,20 +806,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1962324135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1962324128}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a2c14c7e0addb14e85deb4d98c6e751, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pivotPoint: {fileID: 650932022}
-  offset: 50
 --- !u!114 &1962324136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -801,5 +818,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a2c14c7e0addb14e85deb4d98c6e751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pivotPoint: {fileID: 0}
+  _pivotPoint: {fileID: 650932022}
+  _firePoint: {fileID: 798972856}
   offset: 50
+  Bullet: {fileID: 2608183779553254593, guid: 5360809bd22fada478a786ac07f30c0a, type: 3}

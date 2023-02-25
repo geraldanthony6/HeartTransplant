@@ -8,6 +8,7 @@ public class ShootAbility : MonoBehaviour
     [SerializeField] Transform _pivotPoint;
     [SerializeField] Transform _firePoint;
     public float offset = 50;
+    private float cooldown;
     [SerializeField] GameObject Bullet;
 
 
@@ -25,15 +26,20 @@ public class ShootAbility : MonoBehaviour
         Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - _pivotPoint.position;
         float rotation_z = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         _pivotPoint.rotation = Quaternion.Euler(0f, 0f, rotation_z + offset);
+        
 
-        if (Input.GetKey(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             Shoot();
         }
+         if(cooldown > 0){
+            cooldown -= Time.deltaTime;
+        }
+        
     }
 
     void Shoot()
-    {
+    { cooldown = 0.2f;
         Instantiate(Bullet, _firePoint.position, _firePoint.rotation);
     }
 }
