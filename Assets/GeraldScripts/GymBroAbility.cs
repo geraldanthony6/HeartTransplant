@@ -7,6 +7,7 @@ public class GymBroAbility : MonoBehaviour
     [SerializeField]private Transform _pivotPoint;
     [SerializeField]private Transform _fists;
     [SerializeField]private Vector3 _grabOffset = new Vector3(20f, 0);
+    [SerializeField]private GameObject curHeldEnemy;
     [SerializeField]private bool isGrabbing = false;
     [SerializeField]private float holdTimer = 0f;
     // Start is called before the first frame update
@@ -33,17 +34,25 @@ public class GymBroAbility : MonoBehaviour
                     EnemyStats curEnemyGrabbed = hit.collider.gameObject.GetComponent<EnemyStats>();
                     hit.collider.gameObject.transform.position = _fists.transform.position + _grabOffset;
                     isGrabbing = true;
+                    curHeldEnemy = hit.collider.gameObject;
                 }
             }
         }    
 
         if(Input.GetKeyUp(KeyCode.Q)){
             isGrabbing = false;
-            holdTimer = 10;
+            holdTimer = 2;
+            curHeldEnemy = null;
+
         }
 
         if(isGrabbing){
-            holdTimer -= Time.deltaTime * 100;
+            holdTimer -= Time.deltaTime;
+        }
+
+        if(holdTimer <= 0){
+            curHeldEnemy.GetComponent<EnemyStats>().TakeDamage(20);
+            holdTimer = 2f;
         }
     }
 
@@ -52,12 +61,10 @@ public class GymBroAbility : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
-        if(isGrabbing && other.gameObject.CompareTag("Enemy")){
-            if(holdTimer % 2 == 0){
-                other.gameObject.GetComponent<EnemyStats>().TakeDamage(20);
-            }
-        }
+
     }
+
+    
 
     
 }
