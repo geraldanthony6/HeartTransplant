@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c3c1e76e3e8cb4340acb8b4904a73461
+guid: 4e2268587a9a04737be92c707c17e57e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,7 +104,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: luver buoy-Recovered-Sheet_0
+      name: luver buoy-Recovered-Sheet 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -118,14 +118,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 01b3511f672ed495fba7dbcbb5bddc1f
-      internalID: -1281460410
+      spriteID: 7365233cd3ad940b3a30e657b93fe6a7
+      internalID: -917992542
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: luver buoy-Recovered-Sheet_1
+      name: luver buoy-Recovered-Sheet 1_1
       rect:
         serializedVersion: 2
         x: 128
@@ -139,14 +139,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a06d5ab82cede40bcb017206659abb9f
-      internalID: -629128806
+      spriteID: 3c78916cf886541e784ca318885bbb7d
+      internalID: -2016248053
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: luver buoy-Recovered-Sheet_2
+      name: luver buoy-Recovered-Sheet 1_2
       rect:
         serializedVersion: 2
         x: 256
@@ -160,14 +160,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d2abf144d64d6478fade54e424b3407a
-      internalID: 949810813
+      spriteID: c58a62af9431540fa8b50bc045fa41fa
+      internalID: 1036276603
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: luver buoy-Recovered-Sheet_3
+      name: luver buoy-Recovered-Sheet 1_3
       rect:
         serializedVersion: 2
         x: 384
@@ -181,8 +181,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a34d133d2cdf457ba71ab9baec99a35
-      internalID: -423487120
+      spriteID: 83eb8fa362f2341a59baacae3fbab7c8
+      internalID: -1477571932
       vertices: []
       indices: 
       edges: []
@@ -198,10 +198,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      luver buoy-Recovered-Sheet_0: -1281460410
-      luver buoy-Recovered-Sheet_1: -629128806
-      luver buoy-Recovered-Sheet_3: -423487120
-      luver buoy-Recovered-Sheet_2: 949810813
+      luver buoy-Recovered-Sheet 1_1: -2016248053
+      luver buoy-Recovered-Sheet 1_3: -1477571932
+      luver buoy-Recovered-Sheet 1_2: 1036276603
+      luver buoy-Recovered-Sheet 1_0: -917992542
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
