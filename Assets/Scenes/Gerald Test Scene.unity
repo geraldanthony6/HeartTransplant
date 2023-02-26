@@ -2768,6 +2768,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyArray:
   - {fileID: 4114102612462026630, guid: eea010443b7dd478fa257a54f0ea5918, type: 3}
+  - {fileID: 4114102612462026630, guid: eea010443b7dd478fa257a54f0ea5918, type: 3}
   minX: -420
   maxX: 410
   minY: -170
