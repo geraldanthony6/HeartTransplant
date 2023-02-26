@@ -333,7 +333,7 @@ GameObject:
   - component: {fileID: 6278567792371080939}
   - component: {fileID: 300225101890564999}
   m_Layer: 0
-  m_Name: LovingWord
+  m_Name: LovingWord2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
