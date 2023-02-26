@@ -19,7 +19,14 @@ public class PlayerUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        if(!playerStats){
+            if(GameObject.FindGameObjectWithTag("Player")){
+                playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
+            } else
+            {
+                playerStats = GameObject.FindGameObjectWithTag("DogTrainer").GetComponent<PlayerStats>();
+            }
+        }
     }
 
     // Update is called once per frame

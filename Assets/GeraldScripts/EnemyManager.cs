@@ -41,4 +41,8 @@ public class EnemyManager : MonoBehaviour
     public void AddEnemyToList(GameObject enemy){
         curEnemyList.Add(enemy);
     }
+
+    public int GetListLength(){
+        return curEnemyList.Count;
+    }
 }

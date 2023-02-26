@@ -10,6 +10,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField]private GameObject pauseMenu;
     [SerializeField]private GameObject controlsMenu;
     [SerializeField]private Button[] pauseBtns;
+    [SerializeField]private Button[] endButtons;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,9 @@ public class PauseMenu : MonoBehaviour
         pauseBtns[2].onClick.AddListener(ReturnToHome);
         pauseBtns[3].onClick.AddListener(Quit);
         pauseBtns[4].onClick.AddListener(CloseControls);
+
+        endButtons[0].onClick.AddListener(ReturnToHome);
+        endButtons[1].onClick.AddListener(Quit);
     }
 
     // Update is called once per frame
@@ -49,11 +53,15 @@ public class PauseMenu : MonoBehaviour
         controlsMenu.SetActive(false);
     }
 
-    void ReturnToHome(){
+    public void ReturnToHome(){
         SceneManager.LoadScene("StartScreen");
     }
 
-    void Quit(){
+    public void RestartGame(){
+        SceneManager.LoadScene("Gerald Test Scene");
+    }
+
+    public void Quit(){
         Application.Quit();
     }
 }

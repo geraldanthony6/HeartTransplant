@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 930239914754711084, guid: ef949d3b17ff14f62b5c27f34dff7f34, type: 3}
+      propertyPath: _maxHealth
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 1908838931490043600, guid: ef949d3b17ff14f62b5c27f34dff7f34, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -85,7 +89,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1078401015112449883}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 860890353700089439adaed6db6d3f01, type: 3}
   m_Name: 
@@ -93,5 +97,6 @@ MonoBehaviour:
   player: {fileID: 0}
   numDepE: 0
   heart: {fileID: 1572006561336352666, guid: fd6a45c4719a247498be4f222157fac1, type: 3}
+  Emblem: {fileID: 0}
   drainRateTimer: 500
   drainRate: 10

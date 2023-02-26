@@ -7,6 +7,7 @@ public class FunGuyAbility : MonoBehaviour
     [SerializeField]private Transform _pivotPoint;
     [SerializeField]private Transform _firePoint;
     [SerializeField]private GameObject _lovingWords;
+    [SerializeField]private GameObject _hitParticle;
     private float _attackCooldown;
     private float offset = 50;
 
@@ -21,7 +22,7 @@ public class FunGuyAbility : MonoBehaviour
     {
         Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - _pivotPoint.position; 
         float rotation_z = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg; 
-        _pivotPoint.rotation = Quaternion.Euler(0f, 0f, rotation_z + offset);
+        _pivotPoint.rotation = Quaternion.Euler(0f, 0f, rotation_z);
 
         if(Input.GetKey(KeyCode.Mouse0) && _attackCooldown <= 0){
             SayLovingWords();

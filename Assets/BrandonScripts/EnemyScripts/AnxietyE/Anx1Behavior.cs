@@ -27,6 +27,7 @@ public class Anx1Behavior : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag("DogTrainer").transform;
         playerStats = player.gameObject.GetComponent<PlayerStats>();
         EnemyStats = GetComponent<EnemyStats>();
         EnemyMovement = GetComponent<EnemyMovement>();

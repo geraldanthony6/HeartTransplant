@@ -199,10 +199,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d567e55dc5b4574d80fcb2b16da6088, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 100
-  _currPlayerHealth: 100
-  speed: 100
-  maxSpeed: 100
+  _maxHealth: 20
+  _currPlayerHealth: 20
+  speed: 140
+  maxSpeed: 140
+  playerUI: {fileID: 0}
 --- !u!114 &4705668103187772720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,7 +216,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76819c901158548f282980f48abf93cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 0}
   playerUI: {fileID: 0}
   spriteRenderer: {fileID: 4705668103396519164}
   playerSprites:
@@ -261,8 +261,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.23421097, y: 0.4063797}
-  m_Size: {x: 20.407963, y: 40.22342}
+  m_Offset: {x: -0.9080553, y: -0.98051834}
+  m_Size: {x: 21.755651, y: 71.59106}
   m_Direction: 0
 --- !u!50 &4705668103187772726
 Rigidbody2D:
@@ -311,7 +311,7 @@ Transform:
   m_GameObject: {fileID: 4705668103396519166}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 30, y: 30, z: 1}
+  m_LocalScale: {x: 57.618, y: 54.765, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4705668103187772723}

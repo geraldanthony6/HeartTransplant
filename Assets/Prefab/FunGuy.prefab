@@ -87,7 +87,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76819c901158548f282980f48abf93cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 0}
   playerUI: {fileID: 0}
   spriteRenderer: {fileID: 304564517855440440}
   playerSprites:
@@ -122,10 +121,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d567e55dc5b4574d80fcb2b16da6088, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 100
-  _currPlayerHealth: 100
+  _maxHealth: 20
+  _currPlayerHealth: 20
   speed: 100
   maxSpeed: 100
+  playerUI: {fileID: 0}
 --- !u!1 &304564517494741287
 GameObject:
   m_ObjectHideFlags: 0
@@ -151,7 +151,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 304564517494741287}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 35.48, y: 0.4, z: 0}
+  m_LocalPosition: {x: 53.38, y: 0.4, z: 0}
   m_LocalScale: {x: 20, y: 20, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -234,7 +234,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 304564517605125497}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 71.1, y: 0, z: 0}
+  m_LocalPosition: {x: 89, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -300,8 +300,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 304564517855440442}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.3367, y: 5, z: 0}
-  m_LocalScale: {x: 51.02148, y: 43.375656, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 134.21994, y: 113.776855, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 304564517429536204}
@@ -384,7 +384,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 304564518773010941}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25.8, y: 0.4779, z: 0}
+  m_LocalPosition: {x: 43.7, y: 0.4779, z: 0}
   m_LocalScale: {x: 20, y: 10.22268, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

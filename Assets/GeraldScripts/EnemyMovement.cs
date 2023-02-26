@@ -49,7 +49,9 @@ public class EnemyMovement : MonoBehaviour
         if (other.collider.CompareTag("Player") || other.collider.CompareTag("DogTrainer"))
         {
             other.gameObject.GetComponent<PlayerStats>().TakeDamagePlayer(damage);
-            Instantiate(heart, transform.position, Quaternion.identity);
+            if(enemyManager.GetListLength() % 5 == 0){
+                Instantiate(heart, transform.position, Quaternion.identity);
+            }
             Destroy(gameObject);
         } 
     }

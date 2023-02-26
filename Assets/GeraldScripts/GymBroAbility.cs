@@ -11,6 +11,7 @@ public class GymBroAbility : MonoBehaviour
     [SerializeField]private bool isGrabbing = false;
     [SerializeField]private float holdTimer = 0f;
     [SerializeField]private float holdCooldown;
+    [SerializeField]private GameObject hitParticle;
     // Start is called before the first frame update
     void Start()
     {

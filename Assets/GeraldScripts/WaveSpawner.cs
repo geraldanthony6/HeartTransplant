@@ -28,9 +28,11 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField]private bool spawnWave = false;
     [SerializeField]private float waveTimer = 0;
     [SerializeField]private int waveCount;
+    [SerializeField]private int waveAmount;
     // Start is called before the first frame update
     void Start()
     {
+        waveAmount = 10;
         curMinX = room1minX;
         curMaxX = room1maxX;
         curMinY = room1minY;
@@ -41,7 +43,7 @@ public class WaveSpawner : MonoBehaviour
     void Update()
     {
         if(!spawnWave && waveTimer <= 0){
-            StartCoroutine(SpawnWave(10));
+            StartCoroutine(SpawnWave(waveAmount));
         }
 
         if(waveTimer > 0){
@@ -59,6 +61,7 @@ public class WaveSpawner : MonoBehaviour
         }
         spawnWave = false;
         waveTimer = 10;
+        waveAmount += 2;
     }
 
     public float GetWaveTimer(){

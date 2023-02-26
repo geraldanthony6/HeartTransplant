@@ -11,20 +11,20 @@ public class HealthBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = (Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime));
+        
 
     }
 
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") || other.CompareTag("DogTrainer"))
         {
             other.gameObject.GetComponent<PlayerStats>().Heal();
             Destroy(gameObject);
