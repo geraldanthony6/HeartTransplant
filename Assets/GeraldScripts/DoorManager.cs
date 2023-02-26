@@ -48,6 +48,14 @@ public class DoorManager : MonoBehaviour
             doors[5] = true;
             StartCoroutine(OpenDoorInNextRoom(4));
             break;
+            case 6:
+            doors[6] = true;
+            StartCoroutine(OpenDoorInNextRoom(7));
+            break;
+            case 7:
+            doors[7] = true;
+            StartCoroutine(OpenDoorInNextRoom(6));
+            break;
 
         }
     }

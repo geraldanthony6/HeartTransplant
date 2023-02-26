@@ -37,10 +37,18 @@ public class EnemyMovement : MonoBehaviour
     /// <param name="other">The other Collider2D involved in this collision.</param>
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") || other.CompareTag("DogTrainer"))
         {
             other.gameObject.GetComponent<PlayerStats>().TakeDamagePlayer(damage);
         }
 
+    }
+
+    private void OnCollisionEnter2D(Collision2D other) {
+        if (other.collider.CompareTag("Player") || other.collider.CompareTag("DogTrainer"))
+        {
+            other.gameObject.GetComponent<PlayerStats>().TakeDamagePlayer(damage);
+            Destroy(gameObject);
+        } 
     }
 }

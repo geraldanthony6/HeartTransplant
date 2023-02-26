@@ -9,6 +9,7 @@ public class CameraController : MonoBehaviour
     [SerializeField]private Transform level2Pos;
     [SerializeField]private Transform level3Pos;
     [SerializeField]private Transform level4Pos;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -58,6 +59,20 @@ public class CameraController : MonoBehaviour
             transform.position = Vector3.Lerp(transform.position,level1Pos.position, 1 * Time.deltaTime);
             if(Vector3.Distance(transform.position, level1Pos.position) <= 10){
                 doorManager.doors[5] = false;
+            }
+        }
+
+        if(doorManager.doors[6]){
+            transform.position = Vector3.Lerp(transform.position, level4Pos.position, 1 * Time.deltaTime); 
+            if(Vector3.Distance(transform.position, level4Pos.position) <= 10){
+                doorManager.doors[6] = false;
+            }
+        }
+
+        if(doorManager.doors[7]){
+            transform.position = Vector3.Lerp(transform.position, level3Pos.position, 1 * Time.deltaTime); 
+            if(Vector3.Distance(transform.position, level3Pos.position) <= 10){
+                doorManager.doors[7] = false;
             }
         }
     }
