@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    [SerializeField]private float moveSpeed;
     [SerializeField]private PlayerStats playerStats;
     [SerializeField]private PlayerUI playerUI;
     [SerializeField]private SpriteRenderer spriteRenderer;
@@ -23,8 +22,8 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector2.right * moveSpeed * Time.deltaTime * Input.GetAxisRaw("Horizontal"));
-        transform.Translate(Vector2.up * moveSpeed * Time.deltaTime * Input.GetAxisRaw("Vertical"));
+        transform.Translate(Vector2.right * playerStats.maxSpeed * Time.deltaTime * Input.GetAxisRaw("Horizontal"));
+        transform.Translate(Vector2.up * playerStats.maxSpeed * Time.deltaTime * Input.GetAxisRaw("Vertical"));
         Debug.Log(Input.GetAxisRaw("Horizontal") );
         if(Input.GetAxisRaw("Horizontal") == 1){
             

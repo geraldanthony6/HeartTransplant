@@ -199,9 +199,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d567e55dc5b4574d80fcb2b16da6088, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 0
-  _currPlayerHealth: 0
-  distance: {x: 0, y: 0}
+  _maxHealth: 100
+  _currPlayerHealth: 100
+  speed: 100
+  maxSpeed: 100
 --- !u!114 &4705668103187772720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,7 +215,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76819c901158548f282980f48abf93cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 100
   playerStats: {fileID: 0}
   playerUI: {fileID: 0}
   spriteRenderer: {fileID: 4705668103396519164}
