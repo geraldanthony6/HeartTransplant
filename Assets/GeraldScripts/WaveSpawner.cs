@@ -11,7 +11,7 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField]private float maxY;
     [SerializeField]private bool spawnWave = false;
     [SerializeField]private float waveTimer = 0;
-    
+    [SerializeField]private int waveCount;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +32,7 @@ public class WaveSpawner : MonoBehaviour
 
     IEnumerator SpawnWave(int waveSize){
         spawnWave = true;
+        waveCount++;
         yield return new WaitForSeconds(2f);
         for(int i = 0; i < waveSize; i++){
             Instantiate(enemyArray[Random.Range(0, enemyArray.Length)], new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY)), Quaternion.identity);
@@ -43,5 +44,9 @@ public class WaveSpawner : MonoBehaviour
 
     public float GetWaveTimer(){
         return waveTimer;
+    }
+
+    public int GetWaveCount(){
+        return waveCount;
     }
 }

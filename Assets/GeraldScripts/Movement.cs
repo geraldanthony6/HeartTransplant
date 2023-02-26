@@ -7,11 +7,14 @@ public class Movement : MonoBehaviour
     [SerializeField]private float moveSpeed;
     [SerializeField]private PlayerStats playerStats;
     [SerializeField]private PlayerUI playerUI;
+    [SerializeField]private SpriteRenderer spriteRenderer;
+    [SerializeField]private Sprite[] playerSprites;
     private bool movedThroughDoor1 = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        //spriteRenderer = GetComponent<SpriteRenderer>();
         playerUI = GameObject.FindGameObjectWithTag("PlayerUI").GetComponent<PlayerUI>();
         playerStats = GetComponent<PlayerStats>();
         playerUI.SetPlayerStats(playerStats);
@@ -22,6 +25,25 @@ public class Movement : MonoBehaviour
     {
         transform.Translate(Vector2.right * moveSpeed * Time.deltaTime * Input.GetAxisRaw("Horizontal"));
         transform.Translate(Vector2.up * moveSpeed * Time.deltaTime * Input.GetAxisRaw("Vertical"));
+        Debug.Log(Input.GetAxisRaw("Horizontal") );
+        if(Input.GetAxisRaw("Horizontal") == 1){
+            
+            spriteRenderer.sprite = playerSprites[1];
+        } 
+
+        if(Input.GetAxisRaw("Horizontal") == -1){
+            spriteRenderer.sprite = playerSprites[3];
+        }
+
+        if(Input.GetAxisRaw("Vertical" ) == 1){
+            spriteRenderer.sprite = playerSprites[2];
+        }
+
+        if(Input.GetAxisRaw("Vertical" ) == -1){
+            spriteRenderer.sprite = playerSprites[0];
+        }
+
+        
 
         
     }

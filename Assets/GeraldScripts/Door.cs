@@ -6,6 +6,7 @@ public class Door : MonoBehaviour
 {
     [SerializeField]private DoorManager doorManager;
     [SerializeField]private CharacterManager characterManager;
+    [SerializeField]private int doorIndex;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,8 +21,8 @@ public class Door : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.CompareTag("Player") || other.CompareTag("DogTrainer")){
-            doorManager.door1Open = true;
-            characterManager.curSpawnIndex++;
+            Debug.Log("Hit door");
+            doorManager.OpenDoor(doorIndex);
         }
     }
 }

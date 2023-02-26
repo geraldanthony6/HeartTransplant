@@ -88,6 +88,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 100
+  playerStats: {fileID: 0}
+  playerUI: {fileID: 0}
+  spriteRenderer: {fileID: 304564517855440440}
+  playerSprites:
+  - {fileID: -917992542, guid: 4e2268587a9a04737be92c707c17e57e, type: 3}
+  - {fileID: -2016248053, guid: 4e2268587a9a04737be92c707c17e57e, type: 3}
+  - {fileID: 1036276603, guid: 4e2268587a9a04737be92c707c17e57e, type: 3}
+  - {fileID: -1477571932, guid: 4e2268587a9a04737be92c707c17e57e, type: 3}
 --- !u!114 &304564517429536205
 MonoBehaviour:
   m_ObjectHideFlags: 0
