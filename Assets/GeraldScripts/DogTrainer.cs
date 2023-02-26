@@ -47,14 +47,14 @@ public class DogTrainer : MonoBehaviour
         }
 
         if(!dog1Target && !dogOneAvailable){
-            dogs[0].transform.position = Vector2.MoveTowards(dogs[0].transform.position, _dog1Position.position, 50 * Time.deltaTime);
+            dogs[0].transform.position = Vector2.MoveTowards(dogs[0].transform.position, _dog1Position.position, 150 * Time.deltaTime);
             if(Vector3.Distance(dogs[0].transform.position, _dog1Position.position) < 5){
                 dogOneAvailable = true;
             }
         }
 
         if(!dog2Target && !dogTwoAvailable){
-            dogs[1].transform.position = Vector2.MoveTowards(dogs[1].transform.position, _dog2Position.position, 50 * Time.deltaTime);
+            dogs[1].transform.position = Vector2.MoveTowards(dogs[1].transform.position, _dog2Position.position, 150 * Time.deltaTime);
             if(Vector3.Distance(dogs[1].transform.position, _dog2Position.position) < 5){
                 dogTwoAvailable = true;
             }
@@ -92,12 +92,12 @@ public class DogTrainer : MonoBehaviour
     private void AttackDog(int index){
         if(index == 0){
             dogs[index].transform.parent = null;
-            dogs[index].transform.position = Vector2.MoveTowards(dogs[index].transform.position, dog1Target.transform.position, 50 * Time.deltaTime);
+            dogs[index].transform.position = Vector2.MoveTowards(dogs[index].transform.position, dog1Target.transform.position, 150 * Time.deltaTime);
         }  
 
         if(index == 1){
            dogs[index].transform.parent = null;
-            dogs[index].transform.position = Vector2.MoveTowards(dogs[index].transform.position, dog2Target.transform.position, 50 * Time.deltaTime);
+            dogs[index].transform.position = Vector2.MoveTowards(dogs[index].transform.position, dog2Target.transform.position, 150 * Time.deltaTime);
         } 
     }
 }

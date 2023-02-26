@@ -23,7 +23,7 @@ public class FunGuyAbility : MonoBehaviour
         float rotation_z = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg; 
         _pivotPoint.rotation = Quaternion.Euler(0f, 0f, rotation_z + offset);
 
-        if(Input.GetKey(KeyCode.Q) && _attackCooldown <= 0){
+        if(Input.GetKey(KeyCode.Mouse0) && _attackCooldown <= 0){
             SayLovingWords();
         }
 

@@ -6,43 +6,66 @@ public class CharacterManager : MonoBehaviour
 {
     [SerializeField]private GameObject activePlayer;
     [SerializeField]private GameObject[] characterList;
-    [SerializeField]private Transform spawnPos;
+    [SerializeField]private Transform[] spawnPos;
+    [SerializeField]private EnemyManager enemyManager;
+    [SerializeField]private Animator transitionAnimation;
+    [SerializeField]private GameObject transitionScreen;
+    private bool currentlySwitching = false;
+    public int curSpawnIndex = 0;
     // Start is called before the first frame update
     void Start()
     {
+        StartCoroutine(TransitionAnim());
         ChangePlayer(0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Alpha1) && (activePlayer != characterList[0])){
+        if(Input.GetKeyDown(KeyCode.Alpha1) && (activePlayer != characterList[0]) && !currentlySwitching){
+            StartCoroutine(TransitionAnim());
             ChangePlayer(0);
         } 
 
-        if(Input.GetKeyDown(KeyCode.Alpha2) && (activePlayer != characterList[1])){
+        if(Input.GetKeyDown(KeyCode.Alpha2) && (activePlayer != characterList[1]) && !currentlySwitching){
+            StartCoroutine(TransitionAnim());
             ChangePlayer(1);
         }
 
-        if(Input.GetKeyDown(KeyCode.Alpha3) && (activePlayer != characterList[2])){
+        if(Input.GetKeyDown(KeyCode.Alpha3) && (activePlayer != characterList[2]) && !currentlySwitching){
+            StartCoroutine(TransitionAnim());
             ChangePlayer(2);
         }
     }
 
     void ChangePlayer(int index){
+       
         switch(index){
             case 0:
                 Destroy(activePlayer);
-                activePlayer = Instantiate(characterList[index], spawnPos.position, Quaternion.identity);
+                activePlayer = Instantiate(characterList[index], spawnPos[curSpawnIndex].position, Quaternion.identity);
+                enemyManager.SetCurPlayer(activePlayer);
             break;
             case 1:
                 Destroy(activePlayer);
-                activePlayer = Instantiate(characterList[index], spawnPos.position, Quaternion.identity);
+                activePlayer = Instantiate(characterList[index], spawnPos[curSpawnIndex].position, Quaternion.identity);
+                enemyManager.SetCurPlayer(activePlayer);
             break;
             case 2:
                 Destroy(activePlayer);
-                activePlayer = Instantiate(characterList[index], spawnPos.position, Quaternion.identity);
+                activePlayer = Instantiate(characterList[index], spawnPos[curSpawnIndex].position, Quaternion.identity);
+                enemyManager.SetCurPlayer(activePlayer);
             break;
         }
+    }
+
+    IEnumerator TransitionAnim(){
+        transitionScreen.SetActive(true);
+        currentlySwitching = true;
+
+        yield return new WaitForSeconds(2f);
+
+        currentlySwitching = false;
+        transitionScreen.SetActive(false);
     }
 }

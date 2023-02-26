@@ -14,7 +14,7 @@ public class Bone : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector2.right * 50 * Time.deltaTime);
+        transform.Translate(Vector2.right * 150 * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
@@ -30,6 +30,7 @@ public class Bone : MonoBehaviour
             } else if(!dogTrainer.getDogOneAvailable() && !dogTrainer.getDogTwoAvailable()){
                 Debug.Log("All dogs busy");
             }
+            Destroy(gameObject);
         }
     }
 }
