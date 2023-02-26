@@ -26,20 +26,26 @@ public class ShootAbility : MonoBehaviour
         Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - _pivotPoint.position;
         float rotation_z = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         _pivotPoint.rotation = Quaternion.Euler(0f, 0f, rotation_z + offset);
-        
+
 
         if (Input.GetKeyDown(KeyCode.Q) && !(cooldown > 0))
         {
             Shoot();
         }
-         if(cooldown > 0){
+        if (cooldown > 0)
+        {
             cooldown -= Time.deltaTime;
-            
         }
     }
 
     void Shoot()
-    { cooldown = 0.2f;
+    {
+        cooldown = 0.2f;
         Instantiate(Bullet, _firePoint.position, _firePoint.rotation);
     }
+
+
+    
 }
+
+

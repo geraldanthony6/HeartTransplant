@@ -4,37 +4,40 @@ using UnityEngine;
 
 public class EnemyStatsB : MonoBehaviour
 {
-    [SerializeField] private float _maxHealth;
-    [SerializeField] private float _currHealth;
+    public float _maxHealth;
+    public float _currHealth;
+    public float speed;
+    public float damage;
+
     [SerializeField] GameObject heart;
+
+    public Transform player;
+    private PlayerStats playerStats;
     private int eCount;
+    public Vector2 distance;
 
     // Start is called before the first frame update
     void Start()
-    {
-        _maxHealth = 5f;
+    { distance = transform.position;
+        _maxHealth = 10f;
         _currHealth = _maxHealth;
+        speed = 2f;
+        damage = 1f;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        playerStats = player.gameObject.GetComponent<PlayerStats>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (_currHealth <= 0)
-        {
-            Instantiate(heart, transform.position, transform.rotation);
-
-            Destroy(gameObject);
-            // if (eCount % 10 == 0)
-            // {
-            //     Instantiate(heart, transform.position, transform.rotation);
-            // 
-        }
+        transform.position = (Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime));
     }
 
-    public void TakeDamageEnemy(int damage)
+    public void TakeDamageEnemy(float damage)
     {
         _currHealth -= damage;
         Debug.Log("Enemy Health is: " + _currHealth);
-
     }
+
 }
