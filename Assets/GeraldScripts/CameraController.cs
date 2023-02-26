@@ -36,7 +36,7 @@ public class CameraController : MonoBehaviour
         if(doorManager.doors[2]){
             transform.position = Vector3.Lerp(transform.position,level3Pos.position, 1 * Time.deltaTime);
             if(Vector3.Distance(transform.position, level3Pos.position) <= 10){
-                doorManager.doors[3] = false;
+                doorManager.doors[2] = false;
             }
         }
 
