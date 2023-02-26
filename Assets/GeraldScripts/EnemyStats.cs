@@ -6,6 +6,7 @@ public class EnemyStats : MonoBehaviour
 {
     [SerializeField]private float _maxHealth;
     [SerializeField]private float _currHealth;
+    
     // Start is called before the first frame update
     void Start()
     {

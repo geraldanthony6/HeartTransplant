@@ -2,18 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBehavior : MonoBehaviour
+public class HealthBehavior : MonoBehaviour
+
 {
-    [SerializeField] float speed = 0.6f;
-    [SerializeField] int damage;
-
     public Transform player;
+    [SerializeField] float speed;
 
-
-
+    // Start is called before the first frame update
     void Start()
     {
-
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame
@@ -23,19 +21,13 @@ public class EnemyBehavior : MonoBehaviour
 
     }
 
-    /// <summary>
-    /// Sent when another object enters a trigger collider attached to this
-    /// object (2D physics only).
-    /// </summary>
-    /// <param name="other">The other Collider2D involved in this collision.</param>
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            other.gameObject.GetComponent<PlayerStats>().TakeDamagePlayer(damage);
+            other.gameObject.GetComponent<PlayerStats>().Heal();
+            Destroy(gameObject);
         }
-
     }
-
 }
-

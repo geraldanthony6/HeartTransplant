@@ -28,14 +28,14 @@ public class ShootAbility : MonoBehaviour
         _pivotPoint.rotation = Quaternion.Euler(0f, 0f, rotation_z + offset);
         
 
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q) && !(cooldown > 0))
         {
             Shoot();
         }
          if(cooldown > 0){
             cooldown -= Time.deltaTime;
+            
         }
-        
     }
 
     void Shoot()
