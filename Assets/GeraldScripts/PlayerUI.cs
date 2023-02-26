@@ -28,4 +28,5 @@ public class PlayerUI : MonoBehaviour
     public void SetPlayerStats(PlayerStats stats){
         playerStats = stats;
     }
+    
 }

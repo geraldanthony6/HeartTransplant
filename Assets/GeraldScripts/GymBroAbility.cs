@@ -25,7 +25,7 @@ public class GymBroAbility : MonoBehaviour
         float rotation_z = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg; 
         _pivotPoint.rotation = Quaternion.Euler(0f, 0f, rotation_z);
         //TODO: Add hold timer
-        if(Input.GetKey(KeyCode.Mouse0) && holdCooldown <= 0){
+        if(Input.GetKey(KeyCode.Mouse0)){
             Debug.Log("Tryna grab");
             RaycastHit2D hit = Physics2D.Raycast(_fists.position + _grabOffset, Vector2.right, 50f);
 
@@ -66,7 +66,7 @@ public class GymBroAbility : MonoBehaviour
     }
 
     private void OnDrawGizmos() {
-        Gizmos.DrawLine(_fists.transform.position + _grabOffset, _fists.transform.position + new Vector3(10, 0));
+        Gizmos.DrawLine(_fists.transform.position + _grabOffset, _fists.transform.position + new Vector3(20, 0));
     }
 
     private void OnCollisionEnter2D(Collision2D other) {

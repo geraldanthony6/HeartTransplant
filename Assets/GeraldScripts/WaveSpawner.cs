@@ -5,26 +5,26 @@ using UnityEngine;
 public class WaveSpawner : MonoBehaviour
 {
     [SerializeField]private GameObject[] enemyArray;
-    [SerializeField]private float room1minX;
-    [SerializeField]private float room1maxX;
-    [SerializeField]private float room1minY;
-    [SerializeField]private float room1maxY;
-    [SerializeField]private float room2minX;
-    [SerializeField]private float room2maxX;
-    [SerializeField]private float room2minY;
-    [SerializeField]private float room2maxY;
-    [SerializeField]private float room3minX;
-    [SerializeField]private float room3maxX;
-    [SerializeField]private float room3minY;
-    [SerializeField]private float room3maxY;
-    [SerializeField]private float room4minX;
-    [SerializeField]private float room4maxX;
-    [SerializeField]private float room4minY;
-    [SerializeField]private float room4maxY;
-    private float curMinX;
-    private float curMaxX;
-    private float curMinY;
-    private float curMaxY;
+    public float room1minX;
+    public float room1maxX;
+    public float room1minY;
+    public float room1maxY;
+    public float room2minX;
+    public float room2maxX;
+    public float room2minY;
+    public float room2maxY;
+    public float room3minX;
+    public float room3maxX;
+    public float room3minY;
+    public float room3maxY;
+    public float room4minX;
+    public float room4maxX;
+    public float room4minY;
+    public float room4maxY;
+    [SerializeField]private float curMinX;
+    [SerializeField]private float curMaxX;
+    [SerializeField]private float curMinY;
+    [SerializeField]private float curMaxY;
     [SerializeField]private bool spawnWave = false;
     [SerializeField]private float waveTimer = 0;
     [SerializeField]private int waveCount;
@@ -67,5 +67,12 @@ public class WaveSpawner : MonoBehaviour
 
     public int GetWaveCount(){
         return waveCount;
+    }
+
+    public void SetCurSpawnRange(float newCurMinX, float newCurMaxX, float newCurMinY, float newCurMaxY){
+        curMinX = newCurMinX;
+        curMaxX = newCurMaxX;
+        curMinY = newCurMinY;
+        curMaxY = newCurMaxY;
     }
 }

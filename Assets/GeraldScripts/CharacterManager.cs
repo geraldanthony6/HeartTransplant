@@ -12,7 +12,7 @@ public class CharacterManager : MonoBehaviour
     [SerializeField]private Animator transitionAnimation;
     [SerializeField]private GameObject transitionScreen;
     private bool currentlySwitching = false;
-    public int curSpawnIndex = 0;
+    [SerializeField]private int curSpawnIndex;
     // Start is called before the first frame update
     void Start()
     {
@@ -69,5 +69,9 @@ public class CharacterManager : MonoBehaviour
 
         currentlySwitching = false;
         transitionScreen.SetActive(false);
+    }
+
+    public void SetSpawnIndex(int index){
+        curSpawnIndex = index;
     }
 }

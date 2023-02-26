@@ -230,6 +230,7 @@ MonoBehaviour:
   curHeldEnemy: {fileID: 0}
   isGrabbing: 0
   holdTimer: 0
+  holdCooldown: 0
 --- !u!114 &1901993477391145580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,7 +238,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8481640851754261241}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1d567e55dc5b4574d80fcb2b16da6088, type: 3}
   m_Name: 
