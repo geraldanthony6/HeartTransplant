@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    [SerializeField]private PlayerStats playerStats;
+    private PlayerStats playerStats;
     [SerializeField]private PlayerUI playerUI;
     [SerializeField]private SpriteRenderer spriteRenderer;
     [SerializeField]private Sprite[] playerSprites;
@@ -41,10 +41,7 @@ public class Movement : MonoBehaviour
         if(Input.GetAxisRaw("Vertical" ) == -1){
             spriteRenderer.sprite = playerSprites[0];
         }
-
-        
-
-        
+  
     }
 
     private void OnTriggerEnter2D(Collider2D other) {

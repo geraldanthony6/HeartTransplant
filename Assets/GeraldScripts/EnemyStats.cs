@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class EnemyStats : MonoBehaviour
 {
-    [SerializeField]private float _maxHealth;
-    [SerializeField]private float _currHealth;
+    [SerializeField]public float _maxHealth;
+    [SerializeField]public float _currHealth;
     [SerializeField]private GameObject heart;
+
     
     // Start is called before the first frame update
     void Start()

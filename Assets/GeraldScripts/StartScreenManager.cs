@@ -7,12 +7,14 @@ using UnityEngine.SceneManagement;
 public class StartScreenManager : MonoBehaviour
 {
     [SerializeField]private Button[] screenButtons;
+    [SerializeField]private AudioSource startMenuMusic;
     // Start is called before the first frame update
     void Start()
     {
         screenButtons[0].onClick.AddListener(LoadGame);    
         screenButtons[1].onClick.AddListener(LoadControls);
         screenButtons[2].onClick.AddListener(ExitGame);
+        startMenuMusic.Play();
     }
 
     // Update is called once per frame

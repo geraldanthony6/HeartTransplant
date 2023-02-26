@@ -13,7 +13,8 @@ public class Anx2Behavior : MonoBehaviour
     [SerializeField] GameObject Emblem;
 
     PlayerStats playerStats;
-    EnemyStatsB EnemyStats;
+    EnemyStats EnemyStats;
+    EnemyMovement EnemyMovement;
     public float drainRateTimer = 500f;
     public float drainRate = 10f;
 
@@ -26,23 +27,24 @@ public class Anx2Behavior : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         playerStats = player.gameObject.GetComponent<PlayerStats>();
-        EnemyStats = GetComponent<EnemyStatsB>();
-        EnemyStats._currHealth = 3;
-        EnemyStats.damage = 1;
+        EnemyStats = GetComponent<EnemyStats>();
+        EnemyMovement = GetComponent<EnemyMovement>();
+
+        EnemyMovement.damage = 5;
         float rand = Random.Range(5, 7);
-        EnemyStats.speed = rand;
-        InvokeRepeating("drainSpeed", 1f, 10000f);
+        EnemyMovement.speed = rand;
+        InvokeRepeating("drainSpeed", 1f, 1000f);
     }
 
 
     void Update()
     {
         float distance = Vector2.Distance(transform.position, player.position);
-        if (distance < 5)
+        if (distance < 50)
         {
             drainSpeed();
         }
-    
+
     }
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -75,8 +77,6 @@ public class Anx2Behavior : MonoBehaviour
         }
         // Instantiate(Emblem,new Vector2(22.84f,6.92f),Quaternion.identity);
         playerStats.speed -= 0.0020f;
-
-
         Debug.Log("Speed is now:  " + playerStats.speed);
 
     }

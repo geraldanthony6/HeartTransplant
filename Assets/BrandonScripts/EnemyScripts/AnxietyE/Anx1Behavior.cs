@@ -14,7 +14,9 @@ public class Anx1Behavior : MonoBehaviour
 
 
     PlayerStats playerStats;
-    EnemyStatsB EnemyStats;
+    EnemyStats EnemyStats;
+    EnemyMovement EnemyMovement;
+
     private float damage = 5;
     private float xPosition, yPosition, distance, drainRate;
 
@@ -26,10 +28,10 @@ public class Anx1Behavior : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         playerStats = player.gameObject.GetComponent<PlayerStats>();
-        EnemyStats = GetComponent<EnemyStatsB>();
-        EnemyStats.speed = 5;
-        EnemyStats._currHealth = 5;
-        EnemyStats._currHealth = 5;
+        EnemyStats = GetComponent<EnemyStats>();
+        EnemyMovement = GetComponent<EnemyMovement>();
+        EnemyMovement.speed = 3;
+        EnemyMovement.damage = 5;
         drainRate = 0.10f;
 
 

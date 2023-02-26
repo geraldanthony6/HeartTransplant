@@ -9,11 +9,11 @@ public class AngerEBehavior : MonoBehaviour
 
     [SerializeField] Transform player;
     [SerializeField] private int numDepE;
-    [SerializeField] GameObject heart;
-    [SerializeField] GameObject Emblem;
 
     PlayerStats playerStats;
-    EnemyStatsB EnemyStats;
+    EnemyStats EnemyStats;
+    EnemyMovement EnemyMovement;
+
     public float drainRateTimer = 500f;
     public float drainRate = 10f;
     private float screenX = 21.5f;
@@ -30,10 +30,11 @@ public class AngerEBehavior : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         playerStats = player.gameObject.GetComponent<PlayerStats>();
-        EnemyStats = GetComponent<EnemyStatsB>();
-        EnemyStats._currHealth = 3;
-        EnemyStats.damage = 1;
-        EnemyStats.speed = 1;
+        EnemyStats = GetComponent<EnemyStats>();
+        EnemyMovement = GetComponent<EnemyMovement>();
+
+        EnemyMovement.speed = 3;
+        EnemyMovement.damage = 5;
         InvokeRepeating("getAngry", 1f, 10000f);
     }
 
@@ -42,11 +43,10 @@ public class AngerEBehavior : MonoBehaviour
     {
         float distance = Vector2.Distance(transform.position, player.position);
         Debug.Log("Distance is " + distance);
-        if (distance < 10)
+        if (distance < 100)
         {
             getAngry();
         }
-        dropHealth();
     }
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -54,27 +54,19 @@ public class AngerEBehavior : MonoBehaviour
         {
             Debug.Log("Player is hit: " + playerStats._currPlayerHealth);
             other.gameObject.GetComponent<PlayerStats>().TakeDamagePlayer(2f);
-            Destroy(gameObject); 
+            Destroy(gameObject);
         }
         if (other.CompareTag("Bullet"))
         {
             Destroy(other.gameObject);
         }
     }
-    public void dropHealth()
-    {
-        if (EnemyStats._currHealth <= 0)
-        {
-            Instantiate(heart, transform.position, transform.rotation);
-            Destroy(gameObject);
-        }
-    }
+  
     public void getAngry()
     {
 
         // Instantiate(Emblem,new Vector2(22.84f,6.92f),Quaternion.identity);
-        EnemyStats.speed += 0.0020f;
-        Debug.Log("Speed is now:  " + EnemyStats.speed);
+        EnemyMovement.speed += 0.0020f;
 
     }
 
@@ -89,3 +81,4 @@ public class AngerEBehavior : MonoBehaviour
 
 
 }
+

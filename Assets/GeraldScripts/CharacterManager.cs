@@ -32,11 +32,6 @@ public class CharacterManager : MonoBehaviour
             StartCoroutine(TransitionAnim());
             ChangePlayer(1);
         }
-
-        if(Input.GetKeyDown(KeyCode.Alpha3) && (activePlayer != characterList[2]) && !currentlySwitching && (waveSpawner.GetWaveTimer() > 0)){
-            StartCoroutine(TransitionAnim());
-            ChangePlayer(2);
-        }
     }
 
     void ChangePlayer(int index){
@@ -48,11 +43,6 @@ public class CharacterManager : MonoBehaviour
                 enemyManager.SetCurPlayer(activePlayer);
             break;
             case 1:
-                Destroy(activePlayer);
-                activePlayer = Instantiate(characterList[index], spawnPos[curSpawnIndex].position, Quaternion.identity);
-                enemyManager.SetCurPlayer(activePlayer);
-            break;
-            case 2:
                 Destroy(activePlayer);
                 activePlayer = Instantiate(characterList[index], spawnPos[curSpawnIndex].position, Quaternion.identity);
                 enemyManager.SetCurPlayer(activePlayer);
