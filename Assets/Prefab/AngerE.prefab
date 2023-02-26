@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 916595598, guid: 187e26189b8ce49e29cc97c7a34ebfff, type: 3}
   m_Color: {r: 1, g: 0, b: 0.007795334, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 2470682154796235409}
   - component: {fileID: 5793880234327206446}
   - component: {fileID: 3596238477635293249}
+  - component: {fileID: -7927878438127902145}
   m_Layer: 0
   m_Name: AngerE
   m_TagString: E
@@ -182,3 +183,20 @@ MonoBehaviour:
   Emblem: {fileID: 0}
   drainRateTimer: 500
   drainRate: 10
+--- !u!114 &-7927878438127902145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4279634582775043427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37d901a39cd2e48aaa2ea5576609725e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.6
+  damage: 0
+  player: {fileID: 0}
+  enemyManager: {fileID: 0}
+  heart: {fileID: 0}

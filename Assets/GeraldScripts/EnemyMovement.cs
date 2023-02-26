@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField]private float speed = 0.6f;
-    [SerializeField]private int damage;
+    [SerializeField]public float speed = 0.6f;
+    [SerializeField]public int damage;
 
     [SerializeField]private Transform player;
     [SerializeField]private EnemyManager enemyManager;
