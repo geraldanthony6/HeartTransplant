@@ -9,12 +9,13 @@ public class PlayerStats : MonoBehaviour
     public float speed = 8;
     public float maxSpeed = 8;
     private Transform enemy;
+    [SerializeField]private PlayerUI playerUI;
 
     public EnemyStatsB EnemyStats { get; private set; }
 
     void Start()
     {
-
+        playerUI = GameObject.FindGameObjectWithTag("PlayerUI").GetComponent<PlayerUI>();
         if (_currPlayerHealth > _maxHealth)
         {
             _currPlayerHealth = _maxHealth;
@@ -34,6 +35,8 @@ public class PlayerStats : MonoBehaviour
       
         if (_currPlayerHealth <= 0)
         {
+            playerUI.endGameScreen.SetActive(true);
+            Time.timeScale = 0; 
             Destroy(gameObject);
         }
 

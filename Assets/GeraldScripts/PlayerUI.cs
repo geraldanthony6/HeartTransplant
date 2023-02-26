@@ -8,9 +8,12 @@ public class PlayerUI : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI playerHealth;
     [SerializeField] private TextMeshProUGUI waveCount;
+    [SerializeField]private TextMeshProUGUI endGameText;
     [SerializeField] private TextMeshProUGUI waveTimer;
+    public GameObject endGameScreen;
     [SerializeField] private PlayerStats playerStats;
     [SerializeField] private WaveSpawner waveSpawner;
+    
     // [SerializeField] private Image sr;
     // [SerializeField] private Sprite[] Health;
     // Start is called before the first frame update
@@ -26,6 +29,11 @@ public class PlayerUI : MonoBehaviour
         playerHealth.text = "Player Health: " + playerStats._currPlayerHealth;
         waveCount.text = "Wave: " + waveSpawner.GetWaveCount();
         waveTimer.text = "Next Wave: " + (int)waveSpawner.GetWaveTimer();
+        endGameText.text = "You Survived " + waveSpawner.GetWaveCount() + " Waves of Emotions";
+
+        if(playerStats._currPlayerHealth <= 0){
+            endGameScreen.SetActive(true);
+        }
         // checkHealth();
     }
 
