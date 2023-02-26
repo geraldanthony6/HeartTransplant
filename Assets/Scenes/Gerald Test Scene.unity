@@ -285,7 +285,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &104093195
 GameObject:
@@ -430,7 +430,7 @@ GameObject:
   m_Component:
   - component: {fileID: 139919575}
   m_Layer: 0
-  m_Name: Level2Pos (3)
+  m_Name: Level1Pos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1631,7 +1631,7 @@ GameObject:
   m_Component:
   - component: {fileID: 426226673}
   m_Layer: 0
-  m_Name: Level2Pos (2)
+  m_Name: Level3Pos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1676,7 +1676,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 433860775}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -99, y: 459, z: -3.4059436}
+  m_LocalPosition: {x: -99, y: -72, z: -3.4059436}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1735,6 +1735,8 @@ MonoBehaviour:
   spawnPos:
   - {fileID: 433860776}
   - {fileID: 690007995}
+  - {fileID: 690007995}
+  - {fileID: 690007995}
   waveSpawner: {fileID: 1697825435}
   enemyManager: {fileID: 913752862}
   transitionAnimation: {fileID: 298088725}
@@ -1750,7 +1752,7 @@ GameObject:
   m_Component:
   - component: {fileID: 486983129}
   m_Layer: 0
-  m_Name: Level2Pos (1)
+  m_Name: Level4Pos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1764,7 +1766,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 486983128}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 963, y: -34, z: -10}
+  m_LocalPosition: {x: 1007, y: -34, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1977,7 +1979,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 680582915}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14, y: 553, z: -10}
+  m_LocalPosition: {x: 14, y: -48, z: -10}
   m_LocalScale: {x: 20, y: 20, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2034,6 +2036,37 @@ MonoBehaviour:
   level2Pos: {fileID: 102484438}
   level3Pos: {fileID: 426226673}
   level4Pos: {fileID: 486983129}
+--- !u!1 &684433182
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 684433183}
+  m_Layer: 0
+  m_Name: Level4spawnpos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &684433183
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684433182}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1005, y: -81, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 24
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &690007994
 GameObject:
   m_ObjectHideFlags: 0
@@ -2044,7 +2077,7 @@ GameObject:
   m_Component:
   - component: {fileID: 690007995}
   m_Layer: 0
-  m_Name: spawnPos (1)
+  m_Name: Level2Spawnpos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2057,13 +2090,44 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 690007994}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 251, y: 482, z: -3.4059436}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 251, y: 482, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &692439863
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 692439864}
+  m_Layer: 0
+  m_Name: Level3spawnpos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &692439864
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 692439863}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1005, y: 482, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &707302247
 GameObject:
@@ -5383,10 +5447,22 @@ MonoBehaviour:
   enemyArray:
   - {fileID: 4114102612462026630, guid: eea010443b7dd478fa257a54f0ea5918, type: 3}
   - {fileID: 3686083554805649650, guid: ef949d3b17ff14f62b5c27f34dff7f34, type: 3}
-  minX: -425
-  maxX: 400
-  minY: -180
-  maxY: 115
+  room1minX: 0
+  room1maxX: 0
+  room1minY: 0
+  room1maxY: 0
+  room2minX: 0
+  room2maxX: 0
+  room2minY: 0
+  room2maxY: 0
+  room3minX: 0
+  room3maxX: 0
+  room3minY: 0
+  room3maxY: 0
+  room4minX: 0
+  room4maxX: 0
+  room4minY: 0
+  room4maxY: 0
   spawnWave: 0
   waveTimer: 10
   waveCount: 0
@@ -5487,7 +5563,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1721885326
 GameObject:
@@ -5871,7 +5947,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1945532206
 MonoBehaviour:
@@ -5897,6 +5973,7 @@ MonoBehaviour:
   - {fileID: 1951934158}
   - {fileID: 1158830472}
   - {fileID: 211441509}
+  characterManager: {fileID: 0}
 --- !u!1 &1951934158
 GameObject:
   m_ObjectHideFlags: 0

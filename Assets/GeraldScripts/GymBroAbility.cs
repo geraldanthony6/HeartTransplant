@@ -10,6 +10,7 @@ public class GymBroAbility : MonoBehaviour
     [SerializeField]private GameObject curHeldEnemy;
     [SerializeField]private bool isGrabbing = false;
     [SerializeField]private float holdTimer = 0f;
+    [SerializeField]private float holdCooldown;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +25,7 @@ public class GymBroAbility : MonoBehaviour
         float rotation_z = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg; 
         _pivotPoint.rotation = Quaternion.Euler(0f, 0f, rotation_z);
         //TODO: Add hold timer
-        if(Input.GetKey(KeyCode.Mouse0)){
+        if(Input.GetKey(KeyCode.Mouse0) && holdCooldown <= 0){
             Debug.Log("Tryna grab");
             RaycastHit2D hit = Physics2D.Raycast(_fists.position + _grabOffset, Vector2.right, 50f);
 
@@ -56,6 +57,11 @@ public class GymBroAbility : MonoBehaviour
             }
             
             holdTimer = 0.5f;
+            holdCooldown = 2f;
+        }
+
+        if(holdCooldown > 0){
+            holdCooldown -= Time.deltaTime;
         }
     }
 

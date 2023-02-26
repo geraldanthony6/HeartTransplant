@@ -6,7 +6,7 @@ public class CharacterManager : MonoBehaviour
 {
     [SerializeField]private GameObject activePlayer;
     [SerializeField]private GameObject[] characterList;
-    [SerializeField]private Transform[] spawnPos;
+    [SerializeField]public Transform[] spawnPos;
     [SerializeField]private WaveSpawner waveSpawner;
     [SerializeField]private EnemyManager enemyManager;
     [SerializeField]private Animator transitionAnimation;

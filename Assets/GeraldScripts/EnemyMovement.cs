@@ -9,6 +9,7 @@ public class EnemyMovement : MonoBehaviour
 
     [SerializeField]private Transform player;
     [SerializeField]private EnemyManager enemyManager;
+    [SerializeField]private GameObject heart;
 
 
 
@@ -48,6 +49,7 @@ public class EnemyMovement : MonoBehaviour
         if (other.collider.CompareTag("Player") || other.collider.CompareTag("DogTrainer"))
         {
             other.gameObject.GetComponent<PlayerStats>().TakeDamagePlayer(damage);
+            Instantiate(heart, transform.position, Quaternion.identity);
             Destroy(gameObject);
         } 
     }

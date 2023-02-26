@@ -188,3 +188,4 @@ MonoBehaviour:
   damage: 1
   player: {fileID: 0}
   enemyManager: {fileID: 0}
+  heart: {fileID: 1572006561336352666, guid: fd6a45c4719a247498be4f222157fac1, type: 3}
