@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5434911908690414748}
   - component: {fileID: 1376722042919080658}
   - component: {fileID: 2253821087736448219}
-  - component: {fileID: 628910080487244210}
+  - component: {fileID: 732684038063995645}
   m_Layer: 0
   m_Name: Health
   m_TagString: Untagged
@@ -48,7 +48,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.015501201, y: 0.000000059604645}
+  m_Offset: {x: 0.22385883, y: -0.11906147}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -59,7 +59,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.3720247, y: 2.8760219}
+  m_Size: {x: 11.075565, y: 20.378115}
   m_EdgeRadius: 0
 --- !u!50 &2253821087736448219
 Rigidbody2D:
@@ -82,7 +82,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &628910080487244210
+--- !u!114 &732684038063995645
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -91,11 +91,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1572006561336352666}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d189ab6aeb20eab43a6959a246b32115, type: 3}
+  m_Script: {fileID: 11500000, guid: 9a9a123e978f0e54b950cb5a39afdb15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 515740891128910156, guid: 4756ac3495b2ac646bddde008e8143c6, type: 3}
-  speed: 2
+  player: {fileID: 0}
+  speed: 0
 --- !u!1 &8937241365893476073
 GameObject:
   m_ObjectHideFlags: 0
@@ -122,7 +122,7 @@ Transform:
   m_GameObject: {fileID: 8937241365893476073}
   m_LocalRotation: {x: 0.71630156, y: 0.6920066, z: -0.081192374, w: -0.038037363}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.8625, y: 2.7375, z: 1}
+  m_LocalScale: {x: 20, y: 20, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5434911908690414748}

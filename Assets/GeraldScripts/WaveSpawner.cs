@@ -40,4 +40,8 @@ public class WaveSpawner : MonoBehaviour
         spawnWave = false;
         waveTimer = 10;
     }
+
+    public float GetWaveTimer(){
+        return waveTimer;
+    }
 }

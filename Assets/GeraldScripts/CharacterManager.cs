@@ -7,6 +7,7 @@ public class CharacterManager : MonoBehaviour
     [SerializeField]private GameObject activePlayer;
     [SerializeField]private GameObject[] characterList;
     [SerializeField]private Transform[] spawnPos;
+    [SerializeField]private WaveSpawner waveSpawner;
     [SerializeField]private EnemyManager enemyManager;
     [SerializeField]private Animator transitionAnimation;
     [SerializeField]private GameObject transitionScreen;
@@ -22,24 +23,24 @@ public class CharacterManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Alpha1) && (activePlayer != characterList[0]) && !currentlySwitching){
+        if(Input.GetKeyDown(KeyCode.Alpha1) && (activePlayer != characterList[0]) && !currentlySwitching && (waveSpawner.GetWaveTimer() > 0)){
             StartCoroutine(TransitionAnim());
             ChangePlayer(0);
         } 
 
-        if(Input.GetKeyDown(KeyCode.Alpha2) && (activePlayer != characterList[1]) && !currentlySwitching){
+        if(Input.GetKeyDown(KeyCode.Alpha2) && (activePlayer != characterList[1]) && !currentlySwitching && (waveSpawner.GetWaveTimer() > 0)){
             StartCoroutine(TransitionAnim());
             ChangePlayer(1);
         }
 
-        if(Input.GetKeyDown(KeyCode.Alpha3) && (activePlayer != characterList[2]) && !currentlySwitching){
+        if(Input.GetKeyDown(KeyCode.Alpha3) && (activePlayer != characterList[2]) && !currentlySwitching && (waveSpawner.GetWaveTimer() > 0)){
             StartCoroutine(TransitionAnim());
             ChangePlayer(2);
         }
     }
 
     void ChangePlayer(int index){
-       
+  
         switch(index){
             case 0:
                 Destroy(activePlayer);
@@ -57,6 +58,7 @@ public class CharacterManager : MonoBehaviour
                 enemyManager.SetCurPlayer(activePlayer);
             break;
         }
+       
     }
 
     IEnumerator TransitionAnim(){

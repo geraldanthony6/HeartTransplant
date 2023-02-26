@@ -10,6 +10,7 @@ TagManager:
   - E
   - EnemyManager
   - Door1
+  - PlayerUI
   layers:
   - Default
   - TransparentFX

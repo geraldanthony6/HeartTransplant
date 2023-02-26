@@ -6,11 +6,11 @@ public class EnemyStats : MonoBehaviour
 {
     [SerializeField]private float _maxHealth;
     [SerializeField]private float _currHealth;
+    [SerializeField]private GameObject heart;
     
     // Start is called before the first frame update
     void Start()
     {
-        _maxHealth = 100f;
         _currHealth = _maxHealth;
     }
 
@@ -23,6 +23,7 @@ public class EnemyStats : MonoBehaviour
     public void TakeDamage(float damage){
         _currHealth -= damage;
         if(_currHealth <= 0){
+            Instantiate(heart, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

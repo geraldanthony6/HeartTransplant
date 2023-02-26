@@ -5,11 +5,16 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     [SerializeField]private float moveSpeed;
+    [SerializeField]private PlayerStats playerStats;
+    [SerializeField]private PlayerUI playerUI;
     private bool movedThroughDoor1 = false;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerUI = GameObject.FindGameObjectWithTag("PlayerUI").GetComponent<PlayerUI>();
+        playerStats = GetComponent<PlayerStats>();
+        playerUI.SetPlayerStats(playerStats);
     }
 
     // Update is called once per frame
