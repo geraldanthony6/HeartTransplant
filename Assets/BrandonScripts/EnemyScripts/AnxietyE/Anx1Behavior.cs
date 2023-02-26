@@ -12,6 +12,7 @@ public class Anx1Behavior : MonoBehaviour
     [SerializeField] GameObject Anx2;
     [SerializeField] GameObject heart;
 
+
     PlayerStats playerStats;
     EnemyStatsB EnemyStats;
     private float damage = 5;

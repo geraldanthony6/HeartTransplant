@@ -64,32 +64,6 @@ public class PlayerStats : MonoBehaviour
 
     }
 
-    public void checkHealth()
-    {
-        if (_currPlayerHealth >= _maxHealth)
-        {
-            sr.sprite = Health[1];
-
-        }
-        if (_currPlayerHealth <= 75 && _currPlayerHealth >= 50)
-        {
-            sr.sprite = Health[2];
-
-        }
-        if (_currPlayerHealth <= 50 && _currPlayerHealth >= 25)
-        {
-            sr.sprite = Health[3];
-
-        }
-        if (_currPlayerHealth <= 25 && _currPlayerHealth >= 10)
-        {
-            sr.sprite = Health[4];
-        }
-         if (_currPlayerHealth <= 10 && _currPlayerHealth >= 1)
-        {
-            sr.sprite = Health[5];
-        }
-    }
 
 
 
